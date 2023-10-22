@@ -1,4 +1,4 @@
-**Introduction**
+## **Introduction**
 Welcome to the UpFest Backend project, the robust backend component of the UpFest event management system.
 
 **Project Overview**
