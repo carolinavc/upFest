@@ -58,3 +58,5 @@ Use environment variables for secure database connection and other sensitive inf
 
 ## **Acknowledgments**
 This project was developed as part of the UpFest event management system for educational purposes, showcasing the functionalities of a comprehensive event management system.
+
+**Languages used in this project:** node.js, express, SQL
