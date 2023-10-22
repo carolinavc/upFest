@@ -1,0 +1,1152 @@
+{
+	"info": {
+		"_postman_id": "c85c99ab-d2f0-4890-a134-518e32448542",
+		"name": "UpFest",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "1 - evento",
+			"item": [
+				{
+					"name": "palcos",
+					"item": [
+						{
+							"name": "criar",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"artista\": 1,\n    \"palco\": 2,\n    \"data_hora_inicio\": \"2023-10-11T22:00:00.000Z\",\n    \"data_hora_fim\": \"2023-10-12T00:00:00.000Z\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/evento/:id_evento/palco/criar",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"evento",
+										":id_evento",
+										"palco",
+										"criar"
+									],
+									"variable": [
+										{
+											"key": "id_evento",
+											"value": "1"
+										}
+									]
+								},
+								"description": "Adiciona um palco a um evento já existente"
+							},
+							"response": []
+						},
+						{
+							"name": "editar",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"designacao\": \"Palco Principal\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/evento/:id_evento/palco/:id_palco/editar",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"evento",
+										":id_evento",
+										"palco",
+										":id_palco",
+										"editar"
+									],
+									"variable": [
+										{
+											"key": "id_evento",
+											"value": "1"
+										},
+										{
+											"key": "id_palco",
+											"value": "1"
+										}
+									]
+								},
+								"description": "Edita um palco já existente de um evento já existente"
+							},
+							"response": []
+						},
+						{
+							"name": "listar",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/evento/:id_evento/palco/listar",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"evento",
+										":id_evento",
+										"palco",
+										"listar"
+									],
+									"variable": [
+										{
+											"key": "id_evento",
+											"value": "1"
+										}
+									]
+								},
+								"description": "Lista os palcos de um evento"
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "series_bilhetes",
+					"item": [
+						{
+							"name": "criar",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"designacao\": \"Fase 1\",\n    \"numero_bilhetes\": 500,\n    \"limite_vendas\": \"2023-05-10\",\n    \"custo\": 40\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/evento/:id_evento/series_bilhetes/criar",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"evento",
+										":id_evento",
+										"series_bilhetes",
+										"criar"
+									],
+									"variable": [
+										{
+											"key": "id_evento",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "editar",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"designacao\": \"Fase 1\",\n    \"numero_bilhetes\": 500,\n    \"limite_vendas\": \"2023-05-10\",\n    \"custo\": 40\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/evento/:id_evento/series_bilhetes/:id_serie/editar",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"evento",
+										":id_evento",
+										"series_bilhetes",
+										":id_serie",
+										"editar"
+									],
+									"variable": [
+										{
+											"key": "id_evento",
+											"value": "1"
+										},
+										{
+											"key": "id_serie",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "listar",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/evento/:id_evento/series_bilhetes/listar",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"evento",
+										":id_evento",
+										"series_bilhetes",
+										"listar"
+									],
+									"variable": [
+										{
+											"key": "id_evento",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"description": "As séries de bilhetes permitem a um organizador definir preços diferentes de bilhetes à medida que a data se aproxima, ou à medida que os bilhetes vão sendo comprados.\nUma série de bilhetes tem uma determinada quantidade e data-limite de compra associada a  um valor."
+				},
+				{
+					"name": "artistas",
+					"item": [
+						{
+							"name": "criar",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"nome\": \"Amelie Lens\",\n    \"estilo\": \"Techno\",\n    \"biografia\": \"Lens became absorbed in electronic music at 15, after attending the 2005 Dour Festival in Belgium, an experience she describes as 'life-changing'. She says: 'As soon as I got home, I started reading about the history of electronic music and discovered so many new artists and labels. It was like a whole new world opened for me; I made playlists in iTunes, putting tracks in an order that I liked, kind of like a podcast but not mixed'\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/evento/:id_evento/artistas/criar",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"evento",
+										":id_evento",
+										"artistas",
+										"criar"
+									],
+									"variable": [
+										{
+											"key": "id_evento",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "editar",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"nome\": \"Amelie Lens\",\n    \"estilo\": \"Techno\",\n    \"biografia\": \"Lens became absorbed in electronic music at 15, after attending the 2005 Dour Festival in Belgium, an experience she describes as 'life-changing'. She says: 'As soon as I got home, I started reading about the history of electronic music and discovered so many new artists and labels. It was like a whole new world opened for me; I made playlists in iTunes, putting tracks in an order that I liked, kind of like a podcast but not mixed'\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/evento/:id_evento/artista/:id_artista/editar",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"evento",
+										":id_evento",
+										"artista",
+										":id_artista",
+										"editar"
+									],
+									"variable": [
+										{
+											"key": "id_evento",
+											"value": "1"
+										},
+										{
+											"key": "id_artista",
+											"value": "2"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "listar",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/evento/:id_evento/artistas/listar",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"evento",
+										":id_evento",
+										"artistas",
+										"listar"
+									],
+									"variable": [
+										{
+											"key": "id_evento",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "concertos",
+					"item": [
+						{
+							"name": "criar",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"artista\": 1,\n    \"palco\": 2,\n    \"data_hora_inicio\": \"2023-10-11T22:00:00.000Z\",\n    \"data_hora_fim\": \"2023-10-12T00:00:00.000Z\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/evento/:id_evento/concertos/criar",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"evento",
+										":id_evento",
+										"concertos",
+										"criar"
+									],
+									"variable": [
+										{
+											"key": "id_evento",
+											"value": "1"
+										}
+									]
+								},
+								"description": "Um concerto associa um artista a um evento, e indica a hora em que vai acontecer, assim como o palco onde vai acontecer."
+							},
+							"response": []
+						},
+						{
+							"name": "editar",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"artista\": 1,\n    \"palco\": 2,\n    \"data_hora_inicio\": \"2023-10-11T22:00:00.000Z\",\n    \"data_hora_fim\": \"2023-10-12T00:00:00.000Z\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/evento/:id_evento/concertos/:id_concerto/editar",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"evento",
+										":id_evento",
+										"concertos",
+										":id_concerto",
+										"editar"
+									],
+									"variable": [
+										{
+											"key": "id_evento",
+											"value": "1"
+										},
+										{
+											"key": "id_concerto",
+											"value": ""
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "listar",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/evento/:id_evento/concertos/listar",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"evento",
+										":id_evento",
+										"concertos",
+										"listar"
+									],
+									"variable": [
+										{
+											"key": "id_evento",
+											"value": "1"
+										}
+									]
+								},
+								"description": "Lista concertos de um evento"
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "criar",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"designacao\": \"Tomorrowland\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/evento/criar",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"evento",
+								"criar"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "editar",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    designacao: \"Tomorrowland\"\n}",
+							"options": {
+								"raw": {
+									"language": "javascript"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/evento/:id_evento/editar",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"evento",
+								":id_evento",
+								"editar"
+							],
+							"variable": [
+								{
+									"key": "id_evento",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "listar",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/evento/listar",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"evento",
+								"listar"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "2 - vendas",
+			"item": [
+				{
+					"name": "bilhetes",
+					"item": [
+						{
+							"name": "comprar",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"evento\": 1,\n    \"nome\": \"João Sousa\",\n    \"email\": \"joao.sousa@gmail.com\",\n    \"serie\": 1\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/vendas/bilhetes/comprar",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"vendas",
+										"bilhetes",
+										"comprar"
+									]
+								},
+								"description": "Permite a um utilizador adquirir um bilhete.\nEnviando o nome, o e-mail, e a série de bilhetes que quer adquirir, o servidor:\n1. Deverá validar se ainda existem bilhetes disponíveis nessa série, e se essa série ainda está disponível para venda;\n2. Verificar se já existe algum participante com esse e-mail e criar caso não exista, guardando também o nome do participante\n3. Deverá gerar uma referência de pagamento\n4. Deverá criar um bilhete, sem código de entrada, uma vez que ainda não foi pago."
+							},
+							"response": []
+						},
+						{
+							"name": "validar_entrada",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"evento\": 1,\n    \"codigo\": \"FOEMFOND\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/vendas/bilhetes/validar_entrada",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"vendas",
+										"bilhetes",
+										"validar_entrada"
+									]
+								},
+								"description": "A ser utilizado pela organização do evento para validar a entrada de um participante. Deverá receber o código do bilhete gerado no momento em que o bilhete foi pago.\n\n1. Validar se o bilhete existe e foi pago;\n2. Validar se não foi já registada uma entrada no evento nesse dia, para esse bilhete;\n3. Registar a entrada no evento."
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "participantes",
+					"item": [
+						{
+							"name": "listar",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/vendas/participantes/listar?evento=1",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"vendas",
+										"participantes",
+										"listar"
+									],
+									"query": [
+										{
+											"key": "evento",
+											"value": "1"
+										}
+									]
+								},
+								"description": "Lista os participantes inscritos no evento que fizeram o pagamento, e se já deram entrada no evento ou não."
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "pagamentos",
+					"item": [
+						{
+							"name": "listar",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/vendas/pagamentos/listar?participante=joao.sousa@gmail.com",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"vendas",
+										"pagamentos",
+										"listar"
+									],
+									"query": [
+										{
+											"key": "participante",
+											"value": "joao.sousa@gmail.com"
+										}
+									]
+								},
+								"description": "Lista todos os pagamentos associados a um participante, indicando o respetivo estado (pendentes ou pagos).\nSerá útil para o participante confirmar se tem algum pagamento por finalizar."
+							},
+							"response": []
+						},
+						{
+							"name": "validar_pagamento",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"entidade\": 12345,\n    \"referencia\": 12345643,\n    \"valor\": 40\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/vendas/pagamentos/validar",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"vendas",
+										"pagamentos",
+										"validar"
+									]
+								},
+								"description": "Endpoint chamado para validar pagamentos de compra de bilhete ou pagamentos de carregamento cashless.\n\nQuando este endpoint é chamado:\n1. Verificar se o código existe (referência, entidade e valor);\n2. Verificar se o pagamento ainda não foi validado;\n3. Verificar se é um pagamento de bilhete (verificar se está na tabela de bilhete) ou cashless (verificar a tabela pagamento_cashless);\n4. Se for um pagamento de bilhete, verificar se o bilhete já foi validado. Caso contrário, gerar código aleatório do bilhete para ser usado na validação de entrada;\n5. Se for um carregamento cashless retornar um erro a avisar que deverá ser utilizado o endpoint /cashless/validar_pagamento"
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "3/4 - cashless",
+			"item": [
+				{
+					"name": "3 - comerciantes e compras",
+					"item": [
+						{
+							"name": "produtos",
+							"item": [
+								{
+									"name": "criar",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"designacao\": \"Ice Tea\",\n    \"valor\": 4\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/cashless/:id_evento/comerciantes/:id_comerciante/produtos/criar",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"cashless",
+												":id_evento",
+												"comerciantes",
+												":id_comerciante",
+												"produtos",
+												"criar"
+											],
+											"variable": [
+												{
+													"key": "id_evento",
+													"value": "1"
+												},
+												{
+													"key": "id_comerciante",
+													"value": "1"
+												}
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "editar",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"designacao\": \"Ice Tea\",\n    \"valor\": 4\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/cashless/:id_evento/comerciantes/:id_comerciante/produtos/:id_produto/editar",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"cashless",
+												":id_evento",
+												"comerciantes",
+												":id_comerciante",
+												"produtos",
+												":id_produto",
+												"editar"
+											],
+											"variable": [
+												{
+													"key": "id_evento",
+													"value": "1"
+												},
+												{
+													"key": "id_comerciante",
+													"value": "1"
+												},
+												{
+													"key": "id_produto",
+													"value": "1"
+												}
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "listar",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/cashless/:id_evento/comerciantes/:id_comerciante/produtos/listar",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"cashless",
+												":id_evento",
+												"comerciantes",
+												":id_comerciante",
+												"produtos",
+												"listar"
+											],
+											"variable": [
+												{
+													"key": "id_evento",
+													"value": "1"
+												},
+												{
+													"key": "id_comerciante",
+													"value": "1"
+												}
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "comerciante",
+							"item": [
+								{
+									"name": "criar",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"designacao\": \"Bebidas\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/cashless/:id_evento/comerciantes/criar",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"cashless",
+												":id_evento",
+												"comerciantes",
+												"criar"
+											],
+											"variable": [
+												{
+													"key": "id_evento",
+													"value": "1"
+												}
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "listar",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/cashless/:id_evento/comerciantes/listar",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"cashless",
+												":id_evento",
+												"comerciantes",
+												"listar"
+											],
+											"variable": [
+												{
+													"key": "id_evento",
+													"value": "1"
+												}
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "editar",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"designacao\": \"Bebidas\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/cashless/:id_evento/comerciantes/:id_comerciante/editar",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"cashless",
+												":id_evento",
+												"comerciantes",
+												":id_comerciante",
+												"editar"
+											],
+											"variable": [
+												{
+													"key": "id_evento",
+													"value": "1"
+												},
+												{
+													"key": "id_comerciante",
+													"value": "1"
+												}
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "registar_compra",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"participante\": \"joao.sousa@gmail.com\",\n    \"produto\": 1,\n    \"quantidade\": 1\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/cashless/:id_evento/registar_compra",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"cashless",
+										":id_evento",
+										"registar_compra"
+									],
+									"variable": [
+										{
+											"key": "id_evento",
+											"value": "1"
+										}
+									]
+								},
+								"description": "Regista uma compra de produto durante o evento, por parte de um participante.\n\n\n1. Validar se existe alguma conta_cashless do participante nesse evento;\n2. Calcular valor da compra que está a ser feita (considerar valor do produto e quantidade indicada)\n2. Verificar se a conta tem saldo disponível\n3. Registar movimento_cashless com tipo, conta, valor e novo saldo;\n4. Registar gasto_cashless com indicação do novo movimento, produto, quantidade e o valor unitário do produto adquirido;\n5. Atualizar saldo atual na tabela conta_cashless;"
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "4 - carregamentos",
+					"item": [
+						{
+							"name": "saldo",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/cashless/:id_evento/saldo?participante=joao.sousa@gmail.com",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"cashless",
+										":id_evento",
+										"saldo"
+									],
+									"query": [
+										{
+											"key": "participante",
+											"value": "joao.sousa@gmail.com"
+										}
+									],
+									"variable": [
+										{
+											"key": "id_evento",
+											"value": "1"
+										}
+									]
+								},
+								"description": "Devolve o saldo atual da conta do participante no evento."
+							},
+							"response": []
+						},
+						{
+							"name": "extrato",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/cashless/:id_evento/extrato?participante=joao.sousa@gmail.com",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"cashless",
+										":id_evento",
+										"extrato"
+									],
+									"query": [
+										{
+											"key": "participante",
+											"value": "joao.sousa@gmail.com"
+										}
+									],
+									"variable": [
+										{
+											"key": "id_evento",
+											"value": "1"
+										}
+									]
+								},
+								"description": "Devolve uma listagem com todo o extrato de movimentos cashless de um participante num determinado evento.\n\n### Muito importante:\n\nUma vez que existem movimentos tanto de pagamento, como de carregamento, é importante fazer a sua distinção no momento de geração da lista de movimentos.\n\nPretende-se que a lista mostre os movimentos por ordem de data crescente:\n- Para movimentos de carregamento, o retorno deverá ter a estrutura\n```json\n{\n \"id\": 1,\n \"tipo\":\"carregamento\",\n \"valor\":100,\n \"saldo\": 100,\n \"data\": \"2023-04-02T15:15:00.000Z\"\n}\n```\n\n- Para movimentos de gasto, o retorno deverá ter a estrutura\n```json\n{\n \"id\": 3,\n \"tipo\":\"gasto\",\n \"quantidade\":1,\n \"produto\": \"HAVANA CLUB 3 AÑOS\",\n \"comerciante\": \"PCL - BAR C\",\n \"valor_unitario\":8.5,\n \"saldo\": 90.5,\n \"data\": \"2023-04-02T18:39:00.000Z\"\n}\n```"
+							},
+							"response": []
+						},
+						{
+							"name": "extrato_excel",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/cashless/:id_evento/extrato?participante=joao.sousa@gmail.com&excel=1",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"cashless",
+										":id_evento",
+										"extrato"
+									],
+									"query": [
+										{
+											"key": "participante",
+											"value": "joao.sousa@gmail.com"
+										},
+										{
+											"key": "excel",
+											"value": "1"
+										}
+									],
+									"variable": [
+										{
+											"key": "id_evento",
+											"value": "1"
+										}
+									]
+								},
+								"description": "Deverá criar um ficheiro excel com todo o estrato do participante no evento. \nOs campos deverão ser os mesmos que no endpoint que não gera excel (os campos que não forem aplicáveis a um determinado tipo de movimento podem ficar vazios)"
+							},
+							"response": []
+						},
+						{
+							"name": "carregar",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"participante\": \"joao.sousa@gmail.com\",\n    \"valor\": 40\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/cashless/:id_evento/carregar",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"cashless",
+										":id_evento",
+										"carregar"
+									],
+									"variable": [
+										{
+											"key": "id_evento",
+											"value": "1"
+										}
+									]
+								},
+								"description": "Gera uma nova referência de pagamento, que deverá ficar associada à conta do participante.\n\nAssim, \n1. Verificar se existe alguma conta_cashless associada ao participante naquele evento e criar se não existir;\n2. Gerar referência de pagamento aleatória e guardar na tabela pagamento;\n3. Registar pagamento_cashless, associando o pagamento à conta recentemente criada. Esta informação será importante para a validação do pagamento."
+							},
+							"response": []
+						},
+						{
+							"name": "validar_pagamento",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"entidade\": 12345,\n    \"referencia\": 12345643,\n    \"valor\": 40\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/cashless/validar_pagamento",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"cashless",
+										"validar_pagamento"
+									]
+								},
+								"description": "Endpoint chamado para validar pagamentos de compra de bilhete ou pagamentos de carregamento cashless.\n\nQuando este endpoint é chamado:\n1. Verificar se o código existe (referência, entidade e valor);\n2. Verificar se o pagamento ainda não foi validado;\n3. Verificar se é um pagamento de bilhete (verificar se está na tabela de bilhete) ou cashless (verificar a tabela pagamento_cashless);\n4. Se for um pagamento de bilhete retornar um erro a avisar que deverá ser utilizado o endpoint /vendas/pagamentos/validar\n5. Se for um carregamento cashless, criar um movimento_cashless do tipo \"carregamento\", indicando o id da conta cashless e registando o valor e novo saldo;\n6. Criar um carregamento_cashless com a indicação do id de movimento e id de pagamento;\n7. Atualizar valor atual de saldo na tabela conta_cashless."
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "http://localhost:3000",
+			"type": "default"
+		}
+	]
+}
